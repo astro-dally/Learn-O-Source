@@ -14,7 +14,7 @@ const Signup = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:3001/api/voter/auth/signup', { name, email, password });
+            const response = await axios.post('https://learn-o-source.onrender.com/api/voter/auth/signup', { name, email, password });
             if (response && response.data) {
                 setMessage(response.data.message);
                 // Redirect to the login page after successful signup
