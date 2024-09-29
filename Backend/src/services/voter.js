@@ -6,7 +6,7 @@ class VoterService {
     this.details = details;
   }
   static async getVoterByEmail(email) {
-    const user=await prisma.Voter.findUnique({ where: { "email": email } });
+    const user = await prisma.Voter.findUnique({ where: { "email": email } });
     return user;
   }
   async createVoter(voterDetails = this.details) {

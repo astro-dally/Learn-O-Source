@@ -4,13 +4,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './Navbar.css';
 
+import { useNavigate } from 'react-router-dom';
+
 export default function Navbar({ onSearch }) {
     const [searchInput, setSearchInput] = useState('');
+    const navigate = useNavigate();
 
     const handleInputChange = (event) => {
         setSearchInput(event.target.value);
         onSearch(event.target.value);
     };
+    const handleLogout = () => {
+        // Remove the token from local storage
+        localStorage.removeItem('accessToken');
+        // Redirect to the landing page
+        navigate('/');
+    };
+
 
     return (
         <nav className="navbar navbar-expand-lg fixed-top">
@@ -25,7 +35,7 @@ export default function Navbar({ onSearch }) {
                         value={searchInput}
                         onChange={handleInputChange}
                     />
-                    <Link to="/" className="btn btn-outline-dark">Back</Link>
+                    <button onClick={handleLogout} className="btn btn-outline-dark">Logout</button>
                 </form>
             </div>
         </nav>

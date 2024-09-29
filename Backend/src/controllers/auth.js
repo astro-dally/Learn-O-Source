@@ -1,4 +1,4 @@
-// const Validator = require('../../utils/validators.js');
+
 const Validator = require('../utils/validators.js')
 const VoterService = require('../services/voter.js');
 const AuthService = require('../services/auth.js');
@@ -7,6 +7,7 @@ const voterServiceInstance = new VoterService();
 
 const login = async (req, res) => {
     try {
+        console.log("Login request received:", req.body);
         const { email, password } = req.body;
         const validInput = Validator.inputValidation({ email, password });
         console.log(validInput);
@@ -38,6 +39,7 @@ const login = async (req, res) => {
 };
 
 const signup = async (req, res) => {
+    console.log("Signup request received:", req.body);
     const { name, email, password } = req.body;
     const checkInput = Validator.inputValidation({ name, email, password });
     if (!checkInput.isInputValid) {

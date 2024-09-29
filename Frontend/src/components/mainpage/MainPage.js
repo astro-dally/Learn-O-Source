@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Navbar from './Navbar';
+import Navbar from '../navbar/Navbar';
 import './MainPage.css';
-import Card from './Card';
+import Card from '../card/Card';
+import Footer from '../footer/Footer';
 
 export default function MainPage() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -14,6 +15,7 @@ export default function MainPage() {
         <div className="main-page">
             <Navbar onSearch={handleSearch} />
             <Card searchQuery={searchQuery} />
+            <Footer />
         </div>
     );
 }

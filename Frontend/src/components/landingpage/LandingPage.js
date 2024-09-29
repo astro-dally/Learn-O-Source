@@ -12,7 +12,7 @@ export default function LandingPage() {
                     <p className="description">
                         <span className="highlight">Learn-O-Source</span> is a platform that provides information about open source programs.
                     </p>
-                    <Link to="/main" className="learn-button">Let's Learn</Link>
+                    <Link to="/login" className="learn-button">Let's Learn</Link>
                 </div>
             </div>
         </div>

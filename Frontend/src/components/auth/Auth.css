@@ -1,0 +1,73 @@
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.auth-form {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0px 0px 15px 5px #00FFFF;
+    backdrop-filter: blur(10px);
+}
+
+.auth-input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #00FFFF;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+    font-size: 16px;
+    outline: none;
+}
+
+.auth-input:focus {
+    border-color: #00FFFF;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+}
+
+.neon-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #001f4f;
+    color: white;
+    border: 2px solid #00FFFF;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.neon-button:hover {
+    background-color: #00FFFF;
+    color: #001f4f;
+    box-shadow: 0px 0px 15px 5px #00FFFF;
+}
+
+.neon-text {
+    color: #00FFFF;
+    text-shadow: 0px 0px 5px #00FFFF;
+    margin-top: 10px;
+}
+.signup-prompt {
+    margin-top: 15px;
+    text-align: center; /* Center align */
+    font-size: 16px; /* Increase font size */
+}
+
+.signup-link {
+    color: rgb(255, 255, 255); /* Change color to blue */
+    text-decoration: underline; /* Underline the link */
+    font-weight: bold; /* Make the link bold */
+    margin-left: 5px; /* Space between text and link */
+}
+.signup-link:hover{
+    color: #00FFFF;
+}

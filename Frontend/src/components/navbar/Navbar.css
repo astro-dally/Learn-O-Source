@@ -1,0 +1,48 @@
+/* Navbar */
+.navbar {
+    background-color: #1a97c6;
+    /* position: sticky; */
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .navbar:hover {
+    background-color: #1678a5;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #fff;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .navbar-brand:hover {
+    color: #08fcec;
+    transform: scale(1.1);
+  }
+  
+  .form-control {
+    border: 2px solid #08fcec;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #04d9e1;
+    box-shadow: 0 0 8px rgba(8, 252, 236, 0.4);
+  }
+  
+  .btn-outline-dark {
+    margin-left: 20px;
+    border: 2px solid #08fcec;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .btn-outline-dark:hover {
+    background-color: #fc0808;
+    color: #000;
+    box-shadow: 0 0 10px rgba(8, 252, 236, 0.6);
+  }
+  
