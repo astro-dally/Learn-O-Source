@@ -1,13 +1,15 @@
+// Login.js
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import './Auth.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -17,17 +19,16 @@ const Login = () => {
                 setMessage(response.data.message);
                 if (response.data.accessToken) {
                     localStorage.setItem('accessToken', response.data.accessToken);
-                    navigate('/main'); // Redirect to MainPage after successful login
+                    toast.success('Login successful!'); // Show success toast
+                    navigate('/main');
                 }
             } else {
-                setMessage('Unexpected error, please try again.');
+                toast.error('Unexpected error, please try again.');
             }
         } catch (error) {
-            if (error.response && error.response.data) {
-                setMessage(error.response.data.message);
-            } else {
-                setMessage('Server error, please try again later.');
-            }
+            const errorMessage = error.response?.data?.message || 'Server error, please try again later.';
+            setMessage(errorMessage);
+            toast.error(errorMessage); // Show error toast
         }
     };
 

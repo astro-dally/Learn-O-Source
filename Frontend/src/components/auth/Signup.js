@@ -1,6 +1,8 @@
+// Signup.js
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 import './Auth.css';
 
 const Signup = () => {
@@ -8,26 +10,23 @@ const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
-    const navigate = useNavigate(); // Initialize useNavigate
+    const navigate = useNavigate();
 
     const handleSignup = async (e) => {
         e.preventDefault();
-
         try {
             const response = await axios.post('https://learn-o-source.onrender.com/api/voter/auth/signup', { name, email, password });
             if (response && response.data) {
                 setMessage(response.data.message);
-                // Redirect to the login page after successful signup
+                toast.success('Signup successful! Redirecting to login.'); // Show success toast
                 navigate('/login');
             } else {
-                setMessage('Unexpected error, please try again.');
+                toast.error('Unexpected error, please try again.');
             }
         } catch (error) {
-            if (error.response && error.response.data) {
-                setMessage(error.response.data.message);
-            } else {
-                setMessage('Server error, please try again later.');
-            }
+            const errorMessage = error.response?.data?.message || 'Server error, please try again later.';
+            setMessage(errorMessage);
+            toast.error(errorMessage); // Show error toast
         }
     };
 
