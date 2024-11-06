@@ -13,8 +13,8 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <Router>
+      <ToastContainer />
       <Routes>
-        <ToastContainer />
         <Route path="/" element={<LandingPage />} />
         <Route path="/main" element={<MainPage />} />
         <Route path="/login" element={<Login />} />
